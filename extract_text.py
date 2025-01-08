@@ -41,13 +41,18 @@ def numerical_sort(value):
     return [int(num) for num in numbers]
 
 def main():
-    date = "AddonJan08"
-    image_folder_path = f"/Users/duongnguyen/Code/UOB_OD1/Image/{date}"
-    pptx_path = f"/Users/duongnguyen/Code/UOB_OD1/{date}_extract.pptx"
-    template_path = "/Users/duongnguyen/Code/UOB_OD1/Sample.pptx"
+    ####### Configuration #######
+    template_path = "sample.pptx" # PowerPoint template
+    extract_path = "image1" # Folder containing the images
 
+    # Output folder path
+    pptx_path = f"/output/{extract_path}_extract.pptx"
+    #############################
+
+    image_folder_path = f"input/{extract_path}"
+    # Numerically sort the filenames
+    # YES, this is a hacky way to sort the filenames - CHANGE If you have a better way
     filenames = sorted(os.listdir(image_folder_path), key=numerical_sort)
-
     # Iterate through the image folder
     for filename in filenames:
         if filename.endswith(".jpeg") or filename.endswith(".jpg"):

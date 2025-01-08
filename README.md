@@ -54,10 +54,13 @@ pip install opencv-python pytesseract python-pptx
 
 Update paths in the script:
 ```python
-date = "AddonJan08"
-image_folder_path = f"/path_to_your_images/{date}"
-pptx_path = f"/path_to_output/{date}_extract.pptx"
-template_path = "/path_to_template/Sample.pptx"
+    ####### Configuration #######
+    template_path = "sample.pptx" # PowerPoint template
+    extract_path = "image1" # Folder containing the images
+
+    # Output folder path
+    pptx_path = f"/output/{extract_path}_extract.pptx"
+    #############################
 ```
 
 
